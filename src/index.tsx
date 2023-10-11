@@ -4,13 +4,24 @@ import './index.css';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-
+import {ChakraProvider, extendTheme} from '@chakra-ui/react';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const colors = {
+  brand:{
+    'btn': "#008000",
+    
+  }
+}
+ const theme = extendTheme({colors});
+
 root.render(
   <React.StrictMode>
+    <ChakraProvider>
     <App />
+    </ChakraProvider>
   </React.StrictMode>
 );
 
